@@ -1,0 +1,21 @@
+Same origin and same site
+
+Same origin is determined by:
+
+    Scheme
+    Port
+    Host
+
+And the same site is:
+
+    scheme
+    host (registrable domain)
+
+If two websites have the same origin, then they must be the same site because the criteria for determining the same origin are stricter.
+
+The main differences between the two are:
+
+    Same origin considers the port, while same site does not.
+    Same origin considers the host, while same site considers the registrable domain.
+
+(document.domain): can be set to a value that removes subdomains, to change the origin's domain to allow pages on other subdomains of the same domain (if they do the same thing) to access each other. This enables pages on different hosts of a domain to synchronously access each other's DOMs.

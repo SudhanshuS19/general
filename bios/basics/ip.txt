@@ -1,0 +1,6 @@
+ip add. identify host on a network. and ip add. has 4 octets separated by dot.
+A public address is used to identify the device on the Internet, whereas a private address is used to identify a device amongst other devices.
+
+
+Mac address:
+Devices on a network will all have a physical network interface, which is a microchip board found on the device's motherboard. This network interface is assigned a unique address at the factory it was built at, called a MAC (Media Access Control ) address.

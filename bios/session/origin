@@ -1,0 +1,15 @@
+Origin is composed of the scheme, port, and host. When combined, they form the origin.
+
+two types of origin: opaque and tuple
+
+tuple origin includes:
+    scheme (an ASCII string).
+    host (a host).
+    port (null or a 16-bit unsigned integer).
+    domain (null or a domain). Null unless stated otherwise.
+
+    Two origins, A and B, are said to be same site if both of the following statements are true:
+
+        A and B are schemelessly same site
+        A and B are either both opaque origins, or both tuple origins with the same scheme
+
