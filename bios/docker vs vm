@@ -1,0 +1,2 @@
+docker is limited to linux while vm we can use any OS
+docker we dont need to pre allocate the ram;

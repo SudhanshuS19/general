@@ -1,0 +1,3 @@
+Cors is not like the request is blocked and request is not being sent to the server but its is being sended but as a reponse we can say the response is not being visible to us and blocked by the browser
+
+Vulnerability is you cannot access the resources but you can send requests to cross origin
