@@ -1,0 +1,4 @@
+CSRF is abt executing actions
+diff. btw normal request and CSRF is different origin.
+defence against CSRF:
+    check referrer and origin(not very affective.)

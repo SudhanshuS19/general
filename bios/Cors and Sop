@@ -1,3 +1,42 @@
 Cors is not like the request is blocked and request is not being sent to the server but its is being sended but as a reponse we can say the response is not being visible to us and blocked by the browser
 
 Vulnerability is you cannot access the resources but you can send requests to cross origin
+
+What I mentioned earlier, "CORS blocks the response, not the request," only applies to simple requests. For non-simple requests with a preflight, the actual request you want to send will indeed be blocked.
+
+
+Here’s how it works:
+
+    CORS Policy: When a web page makes an HTTP request to a server hosted on a different domain (cross-origin request), the browser sends a "preflight" request to the server to check if it is allowed to make that request.
+
+    Preflight Request: This is an HTTP OPTIONS request that the browser sends before the actual request (e.g., GET, POST, PUT, DELETE) is made. It checks with the server to see if the actual request is safe and permitted based on the CORS policy.
+
+    Headers Involved: The preflight request includes specific headers:
+        Access-Control-Request-Method: This indicates the HTTP method (like POST, PUT, etc.) the client wants to use for the actual request.
+        Access-Control-Request-Headers: This lists the custom headers that the actual request will send (such as Authorization, Content-Type, etc.).
+ 
+By passing the preflight request, early websites are protected from receiving unexpected requests.
+
+
+Cross-origin requests do not include cookies by default. If cookies need to be included, three conditions must be met:
+
+    The backend's response header must have Access-Control-Allow-Credentials: true.
+    The Access-Control-Allow-Origin in the backend's response header cannot be *; it must be explicitly specified.
+    The frontend's fetch must include credentials: 'include'.
+
+For "simple requests," only the third condition needs to be met. For "non-simple requests," all three conditions must be met.
+
+
+VULNERABILITIES using COR:
+    suppose we use regex pattern to check doomain name for allow control access domain --> it may create problem...
+
+
+When the CPU executes the code, there is a mechanism called branch prediction. To improve code execution efficiency, the CPU predicts whether the if condition will be true or false. If the prediction is true, it executes the code inside the if statement and calculates the result in advance.
+All of this is just "prediction". After the actual execution of the if condition, if the result matches the prediction, everything is fine. But if it doesn't match, the previously calculated result is discarded. This mechanism is called speculative execution.
+
+Site Isolation ensures that resources from different websites are placed in different processes. Therefore, even if a Spectre attack is executed on your own website, it doesn't matter because it cannot read data from other websites.
+
+This cross-origin isolated state is not enabled by default and requires setting up these two headers on the webpage:
+
+    Cross-Origin-Embedder-Policy: require-corp
+    Cross-Origin-Opener-Policy: same-origin
