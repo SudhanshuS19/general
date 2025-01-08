@@ -1,0 +1,10 @@
+Order by is used to sort the output of a query lets see some examples.
+
+
+can be used to know no. of columns if there are 4 columns:
+ex:
+select * from students order by 1	:	It will output all the rows and sort then by the first column which is id
+select * from students order by 2	:	It will output all the rows and sort then by the second column which is f_name
+select * from students order by 3	:	It will output all the rows and sort then by the third column which is l_name
+select * from students order by 4	:	It will output all the rows and sort then by the forth column which is roll_no
+select * from students order by 5	:	It will create an error "Unknown column '5' in 'order clause'"
